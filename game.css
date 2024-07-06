@@ -16,7 +16,7 @@ body{
     width: 100px;
    
 }
-.resetB{
+.resetB,.autoB{
     background-color: white;
     border: none;
     font-size: 15px;

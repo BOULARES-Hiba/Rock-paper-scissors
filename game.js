@@ -9,11 +9,6 @@ function game(playerChoice){
     <img src="images/${playerChoice}-emoji.png"  class="move">
      Computer <img src="images/${computerMove}-emoji.png"  class="move">`
     
-
-
-
-
-
     if (computerMove === playerChoice) {
         document.querySelector('.Result').innerHTML = 'Tie';
         score.ties++;
@@ -62,9 +57,24 @@ function reset(){
 score.wins =0;
 score.losses=0;
 score.ties =0;
-
 display();
-
-
 localStorage.setItem('score',JSON.stringify(score));
+}
+
+let autoplay = false ;
+let id;
+function auto(){
+  if(!autoplay ){
+      id =  setInterval(function(){
+          game(pickComputerMove());
+        }
+      ,1000)
+      autoplay= true;
+  }
+  else{
+    autoplay = false;
+    clearInterval(id) ;
+  }
+
+
 }
