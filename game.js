@@ -5,15 +5,23 @@ let score =  JSON.parse(localStorage.getItem('score'))  || {
 };
 function game(playerChoice){
     const computerMove = pickComputerMove();
-    document.querySelector('.computerC').innerHTML = `computer :${computerMove} ,you :${playerChoice}`;
+    document.querySelector('.computerC').innerHTML =   `You 
+    <img src="images/${playerChoice}-emoji.png"  class="move">
+     Computer <img src="images/${computerMove}-emoji.png"  class="move">`
+    
+
+
+
+
+
     if (computerMove === playerChoice) {
         document.querySelector('.Result').innerHTML = 'Tie';
         score.ties++;
     } 
     else if (
-        (playerChoice === 'rock' && computerMove === 'scissor') ||
+        (playerChoice === 'rock' && computerMove === 'scissors') ||
         (playerChoice === 'paper' && computerMove === 'rock') ||
-        (playerChoice === 'scissor' && computerMove === 'paper'))
+        (playerChoice === 'scissors' && computerMove === 'paper'))
   {
        document.querySelector('.Result').innerHTML = 'You Win';
         score.wins++;
@@ -43,11 +51,13 @@ if (randomNumber >= 0 && randomNumber < 1 / 3) {
 } else if (randomNumber >= 1 / 3 && randomNumber < 2 / 3) {
   computerMove = 'paper';
 } else if (randomNumber >= 2 / 3 && randomNumber < 1) {
-  computerMove = 'scissor';
+  computerMove = 'scissors';
 }
 
 return computerMove;
 }
+
+
 function reset(){
 score.wins =0;
 score.losses=0;

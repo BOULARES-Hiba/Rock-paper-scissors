@@ -4,15 +4,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link href="game.css" rel="stylesheet">
 </head>
 <body>
-    <button onclick="game('rock');">rock</button>
-    <button onclick="game('paper');">paper</button>
-    <button onclick="game('scissor');">scissor</button>
+    <button onclick="game('rock')";
+    class="move-icon";>
+        <img src="images/rock-emoji.png" class="move">
+    </button>
+    <button onclick="game('paper');" class="move-icon";>
+        <img src="images/paper-emoji.png" class="move">
+    </button>
+    <button onclick="game('scissors');"  class="move-icon"; >
+        <img src="images/scissors-emoji.png" class="move">
+    </button>
     <p class="Result"></p>
     <p class="computerC"></p>
     <p class="scoreBoard"></p>
-    <button onclick="reset()" >Reset</button>
+    <button onclick="reset()" class="resetB">Reset</button>
     <script src="game.js"></script>
     
 </body>
