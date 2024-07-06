@@ -78,3 +78,14 @@ function auto(){
 
 
 }
+document.body.addEventListener('keydown',(event)=>{
+  if(event.key==='r' || event.key ==='R'){
+    game('rock');
+  }
+ else if(event.key==='p' || event.key ==='P'){
+    game('paper');
+  }
+  else if(event.key==='s' || event.key==='S'){
+    game('scissors');
+  }
+})
